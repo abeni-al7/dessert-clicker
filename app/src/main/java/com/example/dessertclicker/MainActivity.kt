@@ -54,6 +54,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -179,16 +180,16 @@ private fun DessertClickerApp(
     desserts: List<Dessert>
 ) {
 
-    var revenue by rememberSaveable { mutableStateOf(0) }
-    var dessertsSold by rememberSaveable { mutableStateOf(0) }
+    var revenue by rememberSaveable { mutableIntStateOf(0) }
+    var dessertsSold by rememberSaveable { mutableIntStateOf(0) }
 
-    val currentDessertIndex by rememberSaveable { mutableStateOf(0) }
+    val currentDessertIndex by rememberSaveable { mutableIntStateOf(0) }
 
     var currentDessertPrice by rememberSaveable {
-        mutableStateOf(desserts[currentDessertIndex].price)
+        mutableIntStateOf(desserts[currentDessertIndex].price)
     }
     var currentDessertImageId by rememberSaveable {
-        mutableStateOf(desserts[currentDessertIndex].imageId)
+        mutableIntStateOf(desserts[currentDessertIndex].imageId)
     }
 
     Scaffold(
