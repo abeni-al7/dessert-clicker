@@ -1,10 +1,11 @@
 package com.example.dessertclicker.ui
 
-import com.example.dessertclicker.model.Dessert
+import com.example.dessertclicker.R
+import com.example.dessertclicker.data.Datasource
 
 data class DessertUiState(
-    val revenue: Int = 0,
-    val dessertsSold: Int = 0,
-    val currentDessertIndex: Int = 0,
-    val currentDessertImageId: Int = 0
+    var revenue: Int = 0,
+    var dessertsSold: Int = 0,
+    var currentDessertImageId: Int = R.drawable.cupcake,
+    var currentDessertPrice: Int = 0,
 )
